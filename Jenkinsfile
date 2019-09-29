@@ -3,14 +3,14 @@ peline {
         label 'ubuntu'
     }
     environment {
-        registry = 'dockeryuliya/yh_docker'
+        registry = 'dockeryuliya/test_sa'
         registryCredential = 'docker-hub-credentials'
     }
     stages {
-        
         stage ("Clone repo") {
             steps {
-                git url:'git@github.com:YuliyaHancharenka/test_sa.git'
+                git url:'git@github.com:YuliyaHancharenka/test_sa.git',
+                credentialsId: '66f6eb3b-3cd3-492c-997b-6579c2ab1049'
             }
         }
         stage ("Build image") {
